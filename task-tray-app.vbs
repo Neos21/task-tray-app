@@ -9,4 +9,4 @@ Const windowStyle = 7
 ' 本ファイルと同じディレクトリにある `.ps1` ファイルを使用する
 Dim psFilePath : psFilePath = Replace(WScript.ScriptFullName, ".vbs", ".ps1")
 ' 第3引数に `True` を与えると PowerShell が終了するまで WSH 側も待機する (デフォルトは待機せず WSH を終了する `False` と同じ)
-CreateObject("Wscript.Shell").run "powershell -NoLogo -NoProfile -ExecutionPolicy Unrestricted -File " & Chr(34) & psFilePath & Chr(34), windowStyle
+CreateObject("WScript.Shell").Run "powershell -NoLogo -NoProfile -ExecutionPolicy Unrestricted -File " & Chr(34) & psFilePath & Chr(34), windowStyle

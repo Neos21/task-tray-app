@@ -18,7 +18,7 @@ $timerIntervalMs = 1000 * 60 * 3;  # デバッグ用 : `1000 * 3` (3秒間隔)
 # 定数 : 押下するキー : デバッグ時は `{PGDN}` あたりを使うと分かりやすいかと
 $keyToPress      = '{F15}';
 # 定数 : タスクトレイアイコン用 Exe ファイル定義 (タイマー On 時・Off 時で用意する)
-$iconExeTimerOn  = 'C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe';  # `(Get-Process -id $PID | Select-Object -ExpandProperty Path)`
+$iconExeTimerOn  = 'C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe';  # `(Get-Process -id $Pid | Select-Object -ExpandProperty Path)`
 $iconExeTimerOff = 'C:\Windows\System32\cmd.exe';
 
 # イベントハンドラ内で書き込みたい変数は `script` スコープで宣言する https://github.com/yokra9/RunCat_for_Windows_on_PowerShell/blob/master/RunCatPS/src/runcat.ps1
