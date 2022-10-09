@@ -97,8 +97,8 @@ try {
     # バルーンチップを表示する
     $balloonText = if($script:isTimerEnabled) { Write-Output 'Timer Restarted'; } else { Write-Output 'Timer Stopped'; };
     $notifyIcon.BalloonTipIcon  = [Windows.Forms.ToolTipIcon]::Info;  # https://papanda925.com/?p=1890
-    $notifyIcon.BalloonTipText  = $balloonText;
     $notifyIcon.BalloonTipTitle = $balloonText;
+    $notifyIcon.BalloonTipText  = $balloonText;
     $notifyIcon.ShowBalloonTip(1000);
   });
   
