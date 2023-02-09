@@ -59,8 +59,20 @@ try {
   $timer.Add_Tick({
     Debug-Log 'Timer Tick';
     $timer.Stop();
+    
     # キーを押下する https://learn.microsoft.com/ja-jp/dotnet/api/system.windows.forms.sendkeys?view=windowsdesktop-6.0 https://onceuponatimeit.hatenablog.com/entry/2016/02/20/004837
     [Windows.Forms.SendKeys]::SendWait($keyToPress);
+    
+    # マウスを動かす
+    $position = [System.Windows.Forms.Cursor]::Position;
+    $position.x += 10;
+    $position.y += 10;
+    [System.Windows.Forms.Cursor]::Position = $position;
+    Start-Sleep -Milliseconds 10;
+    $position.x -= 10;
+    $position.y -= 10;
+    [System.Windows.Forms.Cursor]::Position = $position;
+    
     # インターバルを再設定してタイマーを再開する
     $timer.Interval = $timerIntervalMs;
     $timer.Start();
